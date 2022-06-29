@@ -1,0 +1,4 @@
+SetEnvIf Referer "^http://localhost:8080/ShoppingSite/views/user_login\.jsp" ref_ok
+Order Deny,Allow
+Deny from all
+Allow from env=ref_ok

@@ -1,0 +1,304 @@
+@charset "UTF-8";
+
+
+body {
+  font-family: Helvetica;
+  background: #eee;
+  -webkit-font-smoothing: antialiased;
+}
+
+#slider {
+    width: 100%;
+    height: 100vh;/*スライダー全体の縦幅を画面の高さいっぱい（100vh）にする*/
+}
+
+.wrapper{
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 0 20px;
+  background-color: #eee;
+}
+
+.header-logo {
+  font-size: 50px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-right: 20px;
+  letter-spacing: .05em;
+}
+
+.header-logo a {
+  color:inherit;
+  text-decoration: none;
+}
+
+.my-parts {
+	transition: all .3s ease 0s;
+	text-decoration: none;
+}
+.my-parts:hover {
+	cursor: pointer;
+	text-shadow: 1px 1px 3px #000;
+}
+
+
+hgroup {
+  text-align:center;
+  margin-top: 4em;
+}
+
+h1, h3 { font-weight: 300; }
+
+h1 { color: #636363; }
+
+h3 { color: #000000;
+	text-align:center;
+}
+
+.map{
+	text-align:center;
+}
+
+
+/*メニュー*/
+.gnav {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: -300px;
+  bottom: 0;
+  width: 300px;
+  background: #ffffff;
+  overflow-x: hidden;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transition: all .5s;
+  z-index: 3;
+  opacity: 0;
+}
+.open .gnav {
+  left: 0;
+  opacity: 1;
+}
+.gnav .inner {
+  padding: 25px;
+}
+.gnav .inner .gnav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.gnav .inner .gnav-list .gnav-item {
+  position: relative;
+  margin: 0;
+  border-bottom: 1px solid #333;
+}
+.gnav .inner .gnav-list .gnav-item a {
+  display: block;
+  color: #333;
+  font-size: 14px;
+  padding: 1em;
+  text-decoration: none;
+  transition-duration: 0.2s;
+}
+.gnav .inner .gnav-list .gnav-item a:hover {
+  background: #e4e4e4;
+}
+@media screen and (max-width: 767px) {
+  .gnav {
+    left: -220px;
+    width: 220px;
+  }
+}
+/*============
+.toggle_btn
+=============*/
+.toggle_btn {
+  display: block;
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  transition: all .5s;
+  cursor: pointer;
+  z-index: 3;
+}
+.toggle_btn span {
+  display: block;
+  position: absolute;
+  left: 0;
+  width: 30px;
+  height: 2px;
+  background-color: #333;
+  border-radius: 4px;
+  transition: all .5s;
+}
+.toggle_btn span:nth-child(1) {
+  top: 4px;
+}
+.toggle_btn span:nth-child(2) {
+  top: 14px;
+}
+.toggle_btn span:nth-child(3) {
+  bottom: 4px;
+}
+.open .toggle_btn span {
+  background-color: #fff;
+}
+.open .toggle_btn span:nth-child(1) {
+  -webkit-transform: translateY(10px) rotate(-315deg);
+  transform: translateY(10px) rotate(-315deg);
+}
+.open .toggle_btn span:nth-child(2) {
+  opacity: 0;
+}
+.open .toggle_btn span:nth-child(3) {
+  -webkit-transform: translateY(-10px) rotate(315deg);
+  transform: translateY(-10px) rotate(315deg);
+}
+/*============
+#mask
+=============*/
+#mask {
+  display: none;
+  transition: all .5s;
+}
+.open #mask {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: .8;
+  z-index: 2;
+  cursor: pointer;
+}
+
+/*============
+contact
+=============*/
+.sns_btn{
+	text-align: center;
+}
+
+.socialEffect__link {
+  margin: .3em;
+  display: block;
+  width: 60px;
+  height: 30px;
+  line-height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  color: #000000;
+  font-size: 1.6rem;
+  background: rgba(255, 255, 255, 0.1);
+  transition: transform ease-out 0.2s;
+}
+
+ul{
+	padding: 0px;
+}
+
+.socialEffect__box li {
+  display: inline-block;
+}
+
+
+/* インスタ用アイコン設定 */
+.icon-instagram::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0.9);
+}
+.fab.fa-instagram {
+  display: inline-block;
+  color: #000000;
+}
+
+.fab.fa-instagram:hover{
+  color: #ffffff;
+}
+
+.icon-instagram:hover {
+  background: radial-gradient(
+      circle farthest-corner at 32% 106%,
+      rgb(255, 225, 125) 0%,
+      rgb(255, 205, 105) 10%,
+      rgb(250, 145, 55) 28%,
+      rgb(235, 65, 65) 42%,
+      transparent 82%
+    ),
+    linear-gradient(135deg, rgb(35, 75, 215) 12%, rgb(195, 60, 190) 58%);
+  transform: scale(0.9);
+}
+
+/* フェイスブック用アイコン設定 */
+.icon-facebook::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0.9);
+}
+.fab.fa-facebook-f {
+  display: inline-block;
+  color: #000000;
+}
+
+.fab.fa-facebook-f:hover {
+  color: #fff;
+}
+
+.icon-facebook:hover {
+  background: #3b5998;
+  transform: scale(0.9);
+}
+
+/* ツイッター用アイコン設定 */
+.icon-twitter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: -1;
+  transform: scale(0.9);
+}
+.fab.fa-twitter {
+  display: inline-block;
+  color: #000000;
+}
+
+.fab.fa-twitter:hover {
+  color: #fff;
+}
+
+.icon-twitter:hover {
+  background: #00b0ed;
+  transform: scale(0.9);
+}
+
+
+.home-link {
+  text-align: center;
+}
+
+.home-link a{
+	 color:inherit;
+  text-decoration: none;
+}
